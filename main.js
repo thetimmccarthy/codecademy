@@ -17,9 +17,7 @@ class Field {
     print() {
         for (let i = 0; i < this.field.length; i++) {
             console.log(this.field[i].join(''));
-        };
-
-        
+        }; 
     }
 
     playGame() {
@@ -47,11 +45,8 @@ class Field {
                     } else {
                         this.field[i][j] = pathCharacter;
                     }
-                
-
                 } 
                 
-
             } else if (move === 'l') {
                 if(typeof this.field[i][j-1] === 'undefined') {
                     // make sure you're handling this correctly
@@ -69,8 +64,6 @@ class Field {
                     } else {
                         this.field[i][j] = pathCharacter;
                     }
-                
-
                 } 
             } else if (move === 'u') {
                 try {
@@ -107,15 +100,8 @@ class Field {
                     break;
                 }
             }   
-
-
-
-        
-
-
-        }
-        
-}
+        }      
+    }
 
     static generateField(height, width) { 
         let field = []
@@ -123,16 +109,12 @@ class Field {
         let hatY = Math.floor(Math.random() * (width - 1));
         let hatX = Math.floor(Math.random() * (height - 1));
 
-
         for (let i = 0; i < height; i++) {
             let rows = []
             for (let j = 0; j < width; j++) {
-                let choice = Math.floor(Math.random() * 3);
-                
+                let choice = Math.floor(Math.random() * 3);   
                 rows.push(choices[choice]);
             }
-
-            
             field.push(rows);
         }
         
@@ -144,8 +126,6 @@ class Field {
         }
         return field;
     }
-    
-
 }
 
 let newField = Field.generateField(5,5);
